@@ -1,0 +1,49 @@
+<div class="form-container">
+  <h2>{{ modoEdicao ? 'Editar Cliente' : 'Dados Pessoais' }}</h2>
+  
+  <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+    
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" placeholder="Ex: Joselina da Silva">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" placeholder="Ex: joselinasilva@gmail.com">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>CPF</mat-label>
+      <!-- Impede digitar letras e limita a 11 números -->
+      <input matInput formControlName="cpf" maxlength="11" (keypress)="somenteNumeros($event)" placeholder="Ex: 65498522265">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Data Nascimento </mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dataNascimento" placeholder="Escolha a data no ícone">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>UF</mat-label>
+      <mat-select formControlName="uf">
+        <mat-option *ngFor="let uf of ufs" [value]="uf">{{ uf }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Município</mat-label>
+      <!-- Transformado em input livre -->
+      <input matInput formControlName="municipio" placeholder="Digite o nome do município">
+    </mat-form-field>
+
+    <div class="botoes-acao">
+      <button mat-raised-button color="primary" type="submit">
+        {{ modoEdicao ? 'Atualizar' : 'Salvar' }}
+      </button>
+      <button mat-raised-button color="warn" type="button" (click)="limpar()">
+        Limpar
+      </button>
+    </div>

@@ -1,0 +1,23 @@
+{
+  "clientes": [
+    {
+      "nome": "joao",
+      "email": "joao@gmail.com",
+      "cpf": "23121321313",
+      "dataNascimento": "2016-02-02T02:00:00.000Z",
+      "uf": "BA",
+      "municipio": "feira de santana",
+      "id": "8vfDxrZNY9c"
+    },
+    {
+      "nome": "alisson ",
+      "email": "alisson@gmail.com",
+      "cpf": "01010101010",
+      "dataNascimento": "2014-07-16T03:00:00.000Z",
+      "uf": "SE",
+      "municipio": "aracaju",
+      "id": "0LQ5Ftt-HTY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
