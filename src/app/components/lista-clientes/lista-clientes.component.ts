@@ -34,7 +34,7 @@ export class ListaClientesComponent implements OnInit {
   
   // O nome exato que o seu HTML está pedindo para listar as colunas
   // Obs: Adicionei 'acoes' no final caso você tenha botões de editar/deletar na tabela
-  colunas: string[] = ['id', 'nome', 'cpf', 'dataNascimento', 'email', 'acoes'];
+  colunas: string[] = ['nome', 'cpf', 'dataNascimento', 'email', 'acoes'];
 
   constructor(private clienteService: ClienteService) {}
 
