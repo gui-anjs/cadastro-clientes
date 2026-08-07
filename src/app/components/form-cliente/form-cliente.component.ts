@@ -10,7 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 // NOVOS IMPORTS DO CALENDÁRIO
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 
 import { ClienteService } from '../../services/cliente.service';
 import { Cliente } from '../../models/cliente';
@@ -27,6 +27,9 @@ import { Cliente } from '../../models/cliente';
     MatButtonModule,
     MatDatepickerModule, // ADICIONADO AQUI
     MatNativeDateModule  // ADICIONADO AQUI
+  ],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }
   ],
   templateUrl: './form-cliente.component.html',
   styleUrls: ['./form-cliente.component.scss']

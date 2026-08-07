@@ -1,15 +1,15 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
-
-// 1. ADICIONE ESSA LINHA DE IMPORT AQUI NO TOPO:
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient } from '@angular/common/http'; 
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    // 2. ADICIONE A VÍRGULA NO FINAL DESTA LINHA:
+    provideAnimationsAsync(),
     provideHttpClient(), 
-    // ... os outros comandos que já estavam aí vão continuar embaixo sem problema
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }
   ]
 };

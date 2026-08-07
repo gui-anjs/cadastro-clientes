@@ -4,39 +4,39 @@
   <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
     
     <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Nome</mat-label>
-      <input matInput formControlName="nome" placeholder="Ex: Joselina da Silva">
+      <label>Nome</label>
+      <input matInput formControlName="nome">
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Email</mat-label>
-      <input matInput formControlName="email" type="email" placeholder="Ex: joselinasilva@gmail.com">
+      <label>Email</label>
+      <input matInput formControlName="email" type="email">
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="full-width">
-      <mat-label>CPF</mat-label>
+      <label>CPF</label>
       <!-- Impede digitar letras e limita a 11 números -->
-      <input matInput formControlName="cpf" maxlength="11" (keypress)="somenteNumeros($event)" placeholder="Ex: 65498522265">
+      <input matInput formControlName="cpf" maxlength="11" (keypress)="somenteNumeros($event)" >
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Data Nascimento </mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="dataNascimento" placeholder="Escolha a data no ícone">
+      <label>Data Nascimento </label>
+      <input matInput [matDatepicker]="picker" formControlName="dataNascimento">
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="full-width">
-      <mat-label>UF</mat-label>
+      <label>UF</label>
       <mat-select formControlName="uf">
         <mat-option *ngFor="let uf of ufs" [value]="uf">{{ uf }}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Município</mat-label>
+      <label>Município</label>
       <!-- Transformado em input livre -->
-      <input matInput formControlName="municipio" placeholder="Digite o nome do município">
+      <input matInput formControlName="municipio">
     </mat-form-field>
 
     <div class="botoes-acao">
